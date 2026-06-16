@@ -12,6 +12,8 @@ export type Book = {
   isbn: string;
   language: string;
   publisher: string;
+  reviews?: number;
+  featured?: boolean;
 };
 
 export type Genre = {
@@ -22,9 +24,16 @@ export type Genre = {
   color: string;
 };
 
+export type ReadingStatus = 'reading' | 'want-to-read' | 'read';
+
 export type ShelfItem = {
   bookId: string;
-  status: 'reading' | 'read' | 'want-to-read';
+  status: ReadingStatus;
   addedAt: string;
-  rating?: number;
+};
+
+export type UserBook = {
+  bookId: string;
+  status: ReadingStatus;
+  addedAt: string;
 };
